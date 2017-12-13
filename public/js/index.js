@@ -13,11 +13,18 @@ socket.on('disconnect', function () {
 
 socket.on('newMessage', function (message) {
   console.log('new Message.', message);
+  var li = jQuery('<li></li>');
+  li.text(`${message.from}: ${message.text}`);
+  jQuery('#messages').append(li);
 });
 
-socket.emit('createMessage', {
-  from: 'index.js Walter',
-  text: 'another message'
-}, function(data) {
-  console.log('Recibido por callback-> ', data);
+jQuery('#message-form').on('submit', function (event) {
+  event.preventDefault();
+  socket.emit('createMessage', {
+    from: 'User',
+    text: jQuery('[name=message]').val()
+  }, function (mje) {
+    console.log('ACK! confirmado', mje);
+  });
+
 });
