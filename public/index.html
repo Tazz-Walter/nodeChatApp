@@ -10,19 +10,7 @@
     <p>ZARAZAAAAA ZARAZAAA</p>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script>
-      //io() usamos para iniciar el request, hacemos un request del cliente al servidor
-      // y mantemos esa conexion abierta
-      var socket = io();
-
-      socket.on('connect', ()=>{
-        console.log('conected to server');
-      });
-
-      socket.on('disconnect', ()=>{
-        console.log('Disconnected from server');
-      });
-
+    <script src="/js/index.js">
     </script>
   </body>
 </html>
