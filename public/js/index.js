@@ -11,7 +11,13 @@ socket.on('disconnect', function () {
   console.log('Disconnected from server');
 });
 
-socket.on('newMessage', function (message){
+socket.on('newMessage', function (message) {
   console.log('new Message.', message);
+});
 
+socket.emit('createMessage', {
+  from: 'index.js Walter',
+  text: 'another message'
+}, function(data) {
+  console.log('Recibido por callback-> ', data);
 });
