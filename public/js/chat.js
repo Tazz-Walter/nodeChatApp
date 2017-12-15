@@ -15,8 +15,9 @@ function scrollToBottom () {
   //calculo para medir cuanto y cuando scrolear para abajo.
   if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHeight){
     messages.scrollTop(scrollHeight);
-  }
-}
+  };
+};
+
 socket.on('connect', function () {
   console.log('conected to server');
 
