@@ -81,9 +81,7 @@ button:disabled {
 
 .chat {
   display: flex;
-  background-image: url('neaRugby.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: #F0F8FF;
 }
 
 .chat__sidebar {
