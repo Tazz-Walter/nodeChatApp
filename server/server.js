@@ -26,7 +26,8 @@ io.on('connection', (socket) => {
     io.emit('newMessage', generateMessage(message.from, message.text));
 
     //acknowledgements aloud the request listener to send something back to the request emitter
-    callback('this is from the server.');
+    // callback('this is from the server.');
+    callback();
     //emite para todos menos para mi en el navegador
     // socket.broadcast.emit('newMessage', {
     //   from: message.from,
